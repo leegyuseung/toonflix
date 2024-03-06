@@ -5,10 +5,11 @@ import 'package:toonflix/models/webtoon_model.dart'; // namespace 설정
 
 class ApiService {
   List<WebtoonModel> webtoonInstances = [];
-  final String baseURL = "https://webtoon-crawler.nomadcoders.workers.dev";
-  final String today = "today";
+  static const String baseURL =
+      "https://webtoon-crawler.nomadcoders.workers.dev";
+  static const String today = "today";
 
-  Future<List<WebtoonModel>> getTodaysToons() async {
+   Future<List<WebtoonModel>> getTodaysToons() async {
     final url = Uri.parse('$baseURL/$today');
     final response = await http.get(url); // Future 타입 -> 비동기
     if (response.statusCode == 200) {
