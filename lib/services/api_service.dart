@@ -9,7 +9,7 @@ class ApiService {
       "https://webtoon-crawler.nomadcoders.workers.dev";
   static const String today = "today";
 
-   Future<List<WebtoonModel>> getTodaysToons() async {
+  Future<List<WebtoonModel>> getTodaysToons() async {
     final url = Uri.parse('$baseURL/$today');
     final response = await http.get(url); // Future 타입 -> 비동기
     if (response.statusCode == 200) {
